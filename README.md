@@ -4,24 +4,18 @@
 
 > WPPConnect é um projeto de código aberto desenvolvido pela comunidade JavaScript com o objetivo de exportar funções do WhatsApp Web para o nó, que pode ser usado para dar suporte à criação de qualquer interação, como atendimento ao cliente, envio de mídia, reconhecimento de inteligência baseado em frases artificiais e muitas outras coisas, use sua imaginação... 😀🤔💭
 
-<p align="center">
-  <a href="https://wppconnect.io/wppconnect/pages/getting-started/installation.html">Getting Started</a> •
-  <a href="https://wppconnect.io/wppconnect/pages/getting-started/basic-functions.html">Basic Function</a> •
-  <a href="https://wppconnect.io/wppconnect/">Documentation</a>
 </p>
 <hr />
 <p align="left">
 	<img src="https://telegram.org/favicon.ico" alt="Telegram-logo" width="32" />
-	<span>Grupo e Canal Telegram: </span>
-	<a href="https://t.me/quepasa_api" target="_blank">Grupo</a>
-	<span> || </span>
-	<a href="https://t.me/quepasa_channel" target="_blank">Canal</a>
+	<span>Grupo Telegram: </span>
+	<a href="https://t.me/wppconnect" target="_blank">Grupo</a>
 </p>
 <hr />
 <p align="left">
 	<img src="https://whatsapp.com/favicon.ico" alt="WhatsAPP-logo" width="32" />
 	<span>Grupo WhatsaAPP: </span>
-	<a href="https://chat.whatsapp.com/Cv5WfmujRzE09yQ6hagYim" target="_blank">Grupo</a>
+	<a href="https://telinkei.com/gp-wppconnect-zap" target="_blank">Grupo</a>
 </p>
 ----------------------------------------------------------------------------
 </p>
