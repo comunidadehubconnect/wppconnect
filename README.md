@@ -1,6 +1,6 @@
 # WPPConnect 📞
 
-![WPPConnect Banner](./img/wppconnect-banner.jpeg)
+![WPPConnect Banner](./wppconnect-banner.jpeg)
 
 [![npm version](https://img.shields.io/npm/v/@wppconnect-team/wppconnect.svg?color=green)](https://www.npmjs.com/package/@wppconnect-team/wppconnect)
 [![Downloads](https://img.shields.io/npm/dm/@wppconnect-team/wppconnect.svg)](https://www.npmjs.com/package/@wppconnect-team/wppconnect)
