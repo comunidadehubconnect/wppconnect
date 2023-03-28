@@ -34,6 +34,7 @@
 
 **Manual de Instalação WPPConnect**
 
+</p>
 sudo apt update && apt upgrade -y
 </p>
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
@@ -72,6 +73,12 @@ npm install --force
 </p>
 npm run build
 </p>
+
+----------------------------------------------------------------------------
+
+**Ativando SSL WPPConnect**
+
+</p>
 sudo apt install nginx
 </p>
 sudo rm /etc/nginx/sites-enabled/default
@@ -79,7 +86,7 @@ sudo rm /etc/nginx/sites-enabled/default
 sudo nano /etc/nginx/sites-available/wppconnect
 </p>
 
-'''
+```
 server {
 
   server_name wppconnect.socialatendimento.com.br;
@@ -107,49 +114,29 @@ server {
   }
 
    }
-'''
+```
 
+</p>
 sudo ln -s /etc/nginx/sites-available/wppconnect /etc/nginx/sites-enabled
-
-sudo nano /etc/nginx/nginx.conf
-
-client_max_body_size 20M;
-
-# HANDLE BIGGER UPLOADS
-
-sudo nginx -t
-
+</p>
 sudo apt-get install snapd
-
+</p>
 sudo snap install notes
-
+</p>
 sudo snap install --classic certbot
-
+</p>
 sudo certbot --nginx
-
+</p>
 sudo service nginx restart
-   
+   </p>
 pm2 start npm --cron-restart="0 0 * * *" -- start
-
+</p>
 http://site/api-docs
 
 
 ----------------------------------------------------------------------------
 
 **Pronto tudo Funcionando**
-
-----------------------------------------------------------------------------
-
-**Comando atualizar API Quepasa**
-
-su - quepasa
-</p>
-git pull
-</p>
-exit
-</p>
-systemctl daemon-reload
-</p>
 
 ----------------------------------------------------------------------------
 ----------------------------------------------------------------------------
@@ -160,40 +147,46 @@ systemctl daemon-reload
 
 ----------------------------------------------------------------------------
 
-git clone https://github.com/aireset/quepasa
 </p>
-cd quepasa/docker
+sudo apt update && apt upgrade -y
 </p>
-nano .env
-</p></p></p>
-WEBSOCKETSSL=false # http or Https
-</p></p>
-para
-</p></p>
-WEBSOCKETSSL=true # http or Https
+git clone https://github.com/wppconnect-team/wppconnect-server
+</p>
+cd wppconnect-server
+</p>
+nano wppconnect-server/src/config.json
+</p>
+secretKeyost
+</p>
+nano wppconnect-server/src/swagger.json
+</p>
+Alterar URL
+</p>
+"url": "http://site/api/{session}",
+</p>
+docker-compose up -d --build
 </p>
 
 ----------------------------------------------------------------------------
 
-**Ativando SSL Quepasa**
+**Ativando SSL WPPConnect**
 
 </p>
-sudo apt-get install nginx
+sudo apt install nginx
 </p>
-cd /etc/nginx/sites-enabled
+sudo rm /etc/nginx/sites-enabled/default
 </p>
-sudo nano /etc/nginx/sites-available/quepasa
-
+sudo nano /etc/nginx/sites-available/wppconnect
 </p>
 
 ```
 server {
 
-  server_name quepasa.dominio.com.br;
+  server_name wppconnect.socialatendimento.com.br;
 
   location / {
 
-    proxy_pass http://127.0.0.1:31000;
+    proxy_pass http://127.0.0.1:21465;
 
     proxy_http_version 1.1;
 
@@ -208,58 +201,29 @@ server {
     proxy_set_header X-Forwarded-Proto $scheme;
 
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    
+
     proxy_cache_bypass $http_upgrade;
 
   }
 
-  }
+   }
 ```
 
-sudo ln -s /etc/nginx/sites-available/quepasa /etc/nginx/sites-enabled
 </p>
+sudo ln -s /etc/nginx/sites-available/wppconnect /etc/nginx/sites-enabled
 </p>
 sudo apt-get install snapd
+</p>
+sudo snap install notes
 </p>
 sudo snap install --classic certbot
 </p>
 sudo certbot --nginx
 </p>
-Coloque Email:
-</p>
-Y
-</p>
-Y
-</p>
-sudo certbot --nginx
-</p>
 sudo service nginx restart
+   </p>
 </p>
-
-----------------------------------------------------------------------------
-
-*Comandos para Iniciar*
-
-```
-docker-compose build
-docker-compose up -d
-```
-ou 
-
-```
-docker-compose up -d --build
-```
-</p>
-
-----------------------------------------------------------------------------
-
-**Instalação Finalizadas**
-
-</p>
-quepa.dominio.com.br/setup
-</p>
-Faça os cadastros em todos eles
-</p>
+http://site/api-docs
 
 ----------------------------------------------------------------------------
 
