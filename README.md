@@ -32,28 +32,61 @@
 ```
 ----------------------------------------------------------------------------
 
-**Manual de Instalação API Quepasa**
+**Manual de Instalação WPPConnect**
 
-git clone https://github.com/sufficit/sufficit-quepasa /opt/quepasa-source
+sudo apt update && apt upgrade -y
 </p>
-bash /opt/quepasa-source/helpers/install.sh
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 </p>
-sudo apt-get install nginx
+sudo apt-get install -y nodejs
 </p>
-cd /etc/nginx/sites-enabled
+node -v
 </p>
-sudo nano /etc/nginx/sites-available/quepasa
+sudo apt install npm
+</p>
+npm install pm2 -g
+</p>
+npm install -g npm@8.18.0
+</p>
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+</p>
+sudo apt install ./google-chrome-stable_current_amd64.deb
+</p>
+apt install git
+</p>
+git clone https://github.com/wppconnect-team/wppconnect-server
+</p>
+nano wppconnect-server/src/config.json
+</p>
+secretKeyost
+</p>
+nano wppconnect-server/src/swagger.json
+</p>
+Alterar URL
+</p>
+"url": "http://site/api/{session}",
+</p>
+cd /root/wppconnect-server
+</p>
+npm install --force
+</p>
+npm run build
+</p>
+sudo apt install nginx
+</p>
+sudo rm /etc/nginx/sites-enabled/default
+</p>
+sudo nano /etc/nginx/sites-available/wppconnect
+</p>
 
-</p>
-
-```
+'''
 server {
 
-  server_name quepasa.dominio.com.br;
+  server_name wppconnect.socialatendimento.com.br;
 
   location / {
 
-    proxy_pass http://127.0.0.1:31000;
+    proxy_pass http://127.0.0.1:21465;
 
     proxy_http_version 1.1;
 
@@ -68,60 +101,38 @@ server {
     proxy_set_header X-Forwarded-Proto $scheme;
 
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    
+
     proxy_cache_bypass $http_upgrade;
 
   }
 
-  }
-```
+   }
+'''
 
-sudo ln -s /etc/nginx/sites-available/quepasa /etc/nginx/sites-enabled
-</p>
-</p>
+sudo ln -s /etc/nginx/sites-available/wppconnect /etc/nginx/sites-enabled
+
+sudo nano /etc/nginx/nginx.conf
+
+client_max_body_size 20M;
+
+# HANDLE BIGGER UPLOADS
+
+sudo nginx -t
+
 sudo apt-get install snapd
-</p>
+
+sudo snap install notes
+
 sudo snap install --classic certbot
-</p>
+
 sudo certbot --nginx
-</p>
-Coloque Email:
-</p>
-Y
-</p>
-Y
-</p>
-sudo certbot --nginx
-</p>
+
 sudo service nginx restart
-</p>
+   
+pm2 start npm --cron-restart="0 0 * * *" -- start
 
-----------------------------------------------------------------------------
+http://site/api-docs
 
-**Ativando SSL da API Quepasa**
-
-nano /opt/quepasa-source/src/.env
-</p>
-Alterar linha 1
-</p>
-WEBSOCKETSSL=false
-</p>
-para
-</p>
-WEBSOCKETSSL=true
-</p>
-systemctl restart quepasa
-</p>
-
-----------------------------------------------------------------------------
-
-**Instalação Finalizadas**
-
-</p>
-quepa.dominio.com.br/setup
-</p>
-Faça os cadastros em todos eles
-</p>
 
 ----------------------------------------------------------------------------
 
