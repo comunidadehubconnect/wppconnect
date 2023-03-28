@@ -89,7 +89,7 @@ sudo nano /etc/nginx/sites-available/wppconnect
 ```
 server {
 
-  server_name wppconnect.socialatendimento.com.br;
+  server_name wppconnect.dominio.com.br;
 
   location / {
 
@@ -182,7 +182,7 @@ sudo nano /etc/nginx/sites-available/wppconnect
 ```
 server {
 
-  server_name wppconnect.socialatendimento.com.br;
+  server_name wppconnect.dominio.com.br;
 
   location / {
 
