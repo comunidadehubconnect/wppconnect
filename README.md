@@ -119,12 +119,6 @@ server {
 </p>
 sudo ln -s /etc/nginx/sites-available/wppconnect /etc/nginx/sites-enabled
 </p>
-sudo apt-get install snapd
-</p>
-sudo snap install notes
-</p>
-sudo snap install --classic certbot
-</p>
 sudo certbot --nginx
 </p>
 sudo service nginx restart
