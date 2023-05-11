@@ -57,7 +57,7 @@ apt install git
 </p>
 git clone https://github.com/wppconnect-team/wppconnect-server
 </p>
-nano wppconnect-server/src/config.json
+nano wppconnect-server/src/config.ts
 </p>
 secretKeyost
 </p>
