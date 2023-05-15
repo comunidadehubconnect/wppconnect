@@ -57,7 +57,8 @@ apt install git
 </p>
 git clone https://github.com/wppconnect-team/wppconnect-server
 </p>
-
+cd wppconnect-server
+</p>
 npm install --force
 </p>
 npm run build
