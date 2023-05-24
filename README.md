@@ -115,6 +115,11 @@ sudo service nginx restart
    </p>
 pm2 start npm --cron-restart="0 0 * * *" -- start
 </p>
+</p>
+EXECUTE COMANDO ABAIXO PARA NÃO CAIR QUANDO REINICIAR A VPS
+</p>
+sudo pm2 startup ubuntu -u root && sudo pm2 startup ubuntu -u root --hp /root && sudo pm2 save
+</p>
 
 Acesse: 
 </p>
