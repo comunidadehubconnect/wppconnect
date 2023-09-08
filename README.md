@@ -254,44 +254,74 @@ sudo pm2 startup ubuntu -u root && sudo pm2 startup ubuntu -u root --hp /root &&
   
 <summary>Manual de Instalação WPPConnect</summary>
 
-
+```bash
 sudo apt update && apt upgrade -y
+```
 
+```bash
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+```
 
+```bash
 sudo apt-get install -y nodejs
+```
 
+```bash
 node -v
+```
 
+```bash
 sudo apt install npm
+```
 
+```bash
 npm install pm2 -g
+```
 
+```bash
 npm install -g npm@8.18.0
+```
 
+```bash
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+```
 
+```bash
 sudo apt install ./google-chrome-stable_current_amd64.deb
 
+
+```bash
 apt install git
+```
 
+```bash
 git clone https://github.com/wppconnect-team/wppconnect-server
+```
 
+```bash
 cd wppconnect-server
+```
 
+```bash
 npm install --force
+```
 
+```bash
 npm run build
-
+```
 
 
 ## Ativando SSL WPPConnect
 
-
+```bash
 sudo apt install nginx
+```
 
+```bash
 sudo rm /etc/nginx/sites-enabled/default
+```
 
+```bash
 sudo nano /etc/nginx/sites-available/wppconnect
 
 
@@ -325,19 +355,29 @@ server {
    }
 ```
 
-
+```bash
 sudo ln -s /etc/nginx/sites-available/wppconnect /etc/nginx/sites-enabled
 
+
+```bash
 sudo certbot --nginx
 
+
+```bash
 sudo service nginx restart
+```
 
+```bash
 pm2 start npm --cron-restart="0 0 * * *" -- start
+```
 
+```bash
 EXECUTE COMANDO ABAIXO PARA NÃO CAIR QUANDO REINICIAR A VPS
+```
 
+```bash
 sudo pm2 startup ubuntu -u root && sudo pm2 startup ubuntu -u root --hp /root && sudo pm2 save
-
+```
 
 Acesse: 
 
