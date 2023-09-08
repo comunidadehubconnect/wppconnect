@@ -14,6 +14,7 @@
 
 
 <details>
+  
 <summary>Manual de Instalação Chatwoot</summary>
 
 ### Atualize sua máquina com os últimos pacotes
@@ -85,6 +86,10 @@ update installation_configs set locked = false;
 ```
 
 </details>
+
+<details>
+  
+<summary>Manual de Instalação N8N</summary>
 
 ### Criando Banco de dados Usuario e Senha
 
